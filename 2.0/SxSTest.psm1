@@ -27,4 +27,9 @@ function Invoke-Test {
         if($_) { Write-Host "   PASS   " -Background Green -Foreground $Background }
         else { Write-Host "   FAIL   " -Background Red -Foreground $Background }
     }
+
+    $Version = $MyInvocation.MyCommand.Module.Version
+    Get-Module $MyInvocation.MyCommand.Module.Name | 
+        Where { $Version -ne $_.Version } |
+        Remove-Module -ErrorAction SilentlyContinue
 }
