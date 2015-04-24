@@ -61,16 +61,16 @@ WARNING: Restoring PSModulePath
 
 C:\PS> Get-Module SxSTest | Format-Table Name, Version
 
-Name                                                                                    Version
-----                                                                                    -------
-SxSTest                                                                                 1.0
+Name                                            Version
+----                                            -------
+SxSTest                                         1.0
 
 
 C:\PS> &(Get-Module SxSTest){ Get-Module SxSTest | Format-Table Name, Version}
 
-Name                                                                                    Version
-----                                                                                    -------
-SxSTest                                                                                 2.0
-SxSTest                                                                                 1.0
+Name                                            Version
+----                                            -------
+SxSTest                                         2.0
+SxSTest                                         1.0
 
 ```
