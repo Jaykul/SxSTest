@@ -1,3 +1,9 @@
+if($Host.UI.RawUI.BackgroundColor -is [ConsoleColor]) {
+    $Background = $Host.UI.RawUI.BackgroundColor
+} else {
+    $Background = "Black"
+}
+
 function Get-SxSVersion {
     [CmdletBinding()]
     param()
