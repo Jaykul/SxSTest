@@ -1,3 +1,10 @@
+
+if($Host.UI.RawUI.BackgroundColor -is [ConsoleColor]) {
+    $Background = $Host.UI.RawUI.BackgroundColor
+} else {
+    $Background = "Black"
+}
+
 function Get-SxSVersion {
     [CmdletBinding()]
     param()
@@ -16,7 +23,10 @@ function Get-ModuleVersion {
 
 function Invoke-Test {
     [CmdletBinding()]
-    param()    
+    param()
     Write-Verbose "Invoke-Test 1.0"
-    & $Pwd\Test.ps1
+    & $Pwd\Test.ps1 | % { 
+        if($_) { Write-Host "   PASS   " -Background Green -Foreground $Background }
+        else { Write-Host "   FAIL   " -Background Red -Foreground $Background }
+    }
 }
