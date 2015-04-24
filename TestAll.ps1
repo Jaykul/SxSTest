@@ -6,7 +6,7 @@ if( $Env:PSModulePath -notmatch [regex]::escape($PSScriptRoot)) {
     $Env:PSModulePath = "$PSScriptRoot;$Env:PSModulePath"
 }
 Write-Host "=== CLEAN RELOAD SxSTest v1.0 ===" -Fore Magenta
-Remove-Module SxSTest
+Remove-Module SxSTest -ErrorAction Ignore
 Import-Module SxSTest -RequiredVersion 1.0
 
 Write-Host "=== TEST SxSTest v2.0 ===" -Fore Magenta
@@ -38,3 +38,5 @@ if($PSModulePathCopy) {
 }
 
 Pop-Location
+
+
