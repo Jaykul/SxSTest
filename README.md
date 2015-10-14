@@ -1,7 +1,9 @@
 # SxSTest
 An example of side-by-side PowerShell modules, for test purposes
 
-Currently there seems to be a bug in dependencies which gets weird.
+When originally published, there was a bug in dependencies...
+
+_The current version of PS5 fixes this so that all tests PASS_
 
 ```
 C:\PS> .\TestAll.ps1
